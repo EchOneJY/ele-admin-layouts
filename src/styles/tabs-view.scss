@@ -1,0 +1,117 @@
+@import './var';
+
+.eal-tabs {
+  display: flex;
+  justify-content: space-between;
+  height: 34px;
+  line-height: 34px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(29, 35, 41, 0.05);
+  padding: 0 10px;
+  overflow: hidden;
+  .el-tabs {
+    flex: 1;
+    overflow: hidden;
+  }
+  .el-tabs__header {
+    border: none !important;
+  }
+  .el-tabs__nav-next,
+  .el-tabs__nav-prev {
+    line-height: 34px;
+  }
+  .el-tabs__nav {
+    border: none !important;
+    border-radius: 2px 2px 0 0;
+  }
+  .el-tabs__item {
+    height: 28px;
+    line-height: 27px;
+    transition: none !important;
+    padding: 0 10px !important;
+    border: 1px solid #d7ddeb;
+    border-bottom: 1px solid #d7ddeb !important;
+    margin-right: 3px;
+    border-radius: 2px 2px 0 0;
+    font-size: 13px;
+    &:first-child {
+      border-left: 1px solid #d7ddeb !important;
+    }
+    &.is-closable {
+      padding-right: 3px !important;
+    }
+    &.is-active {
+      padding-left: 20px !important;
+      background-color: $eal-theme-color;
+      color: #fff;
+      border: 1px solid $eal-theme-color;
+      border-bottom: 1px solid $eal-theme-color !important;
+      border-left: 1px solid $eal-theme-color !important;
+      &::before {
+        position: absolute;
+        top: calc(50% - 3px);
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+        content: '';
+        transition: none;
+      }
+      .el-icon-close {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+    &:hover {
+      color: inherit !important;
+      .el-icon-close {
+        opacity: 1;
+      }
+    }
+    .el-icon-close {
+      width: 12px !important;
+      background: none;
+      transition: none;
+      color: rgba(0, 0, 0, 0.85);
+      right: 2px !important;
+      opacity: 0;
+      &:hover {
+        font-size: 14px;
+      }
+    }
+  }
+  .tabs-extra {
+    display: flex;
+    align-items: center;
+    li {
+      width: 36px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      &:not(last-child) {
+        border-left: 1px solid #eee;
+      }
+
+      .svg-icon,
+      .el-icon {
+        font-size: 14px;
+        color: #666;
+
+        &.arrow-down,
+        &.refresh,
+        &-arrow-down {
+          font-size: 16px;
+        }
+        &:hover {
+          color: rgba(0, 0, 0, 0.85);
+        }
+      }
+    }
+  }
+}

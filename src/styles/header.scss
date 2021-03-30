@@ -1,0 +1,31 @@
+.eal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  line-height: 48px;
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 21, 41, 0.12);
+  &-left {
+    display: flex;
+    align-items: center;
+    .icon-fold {
+      font-size: 20px;
+      cursor: pointer;
+      padding: 12px;
+      transition: 0.25s;
+      color: #666;
+      &:hover {
+        background: rgba(0, 0, 0, 0.025);
+      }
+    }
+  }
+  &-breadcrumb {
+    margin-left: 12px;
+    &.ml {
+      margin-left: 6px;
+    }
+  }
+  &-right {
+    padding-right: 30px;
+  }
+}

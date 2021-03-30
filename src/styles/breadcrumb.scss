@@ -1,0 +1,12 @@
+.eal-beradcrumb {
+  .el-breadcrumb__item {
+    .el-breadcrumb__inner {
+      color: #999;
+    }
+    &.current {
+      .el-breadcrumb__inner {
+        color: #666;
+      }
+    }
+  }
+}

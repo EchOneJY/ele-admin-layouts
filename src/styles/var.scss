@@ -1,0 +1,17 @@
+$eal-theme-color: #3171ff !default;
+
+$eal-menu-text: rgba(256, 256, 256, 0.6) !default;
+$eal-menu-hover-text: #fff !default;
+$eal-menu-active-text: #fff !default;
+
+$eal-menu-bg: #16224a !default;
+$eal-menu-hover-bg: #16224a !default;
+$eal-menu-active-bg: $eal-theme-color !default;
+$eal-sub-menu-bg: #1a2752 !default;
+$eal-sub-menu-hover-bg: #1a2752 !default;
+
+:export {
+  menuText: $eal-menu-text;
+  menuActiveText: $eal-menu-active-text;
+  menuBg: $eal-menu-bg;
+}

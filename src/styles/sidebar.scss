@@ -1,0 +1,154 @@
+@import './var';
+
+.eal-sidebar {
+  background-color: $eal-menu-bg;
+  transition: 0.28s;
+  position: relative;
+  &.collapse {
+    width: 64px !important;
+    flex: 0 0 64px !important;
+  }
+  .eal-logo {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background: url('../assets/logo.png') no-repeat 20px center;
+    background-size: 128px 28px;
+    &.collapse {
+      background: url('../assets/logo_collapse.png') no-repeat center center;
+    }
+  }
+  .collapse-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 36px;
+    line-height: 36px;
+    color: #bfbfbf;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .sidebar-menu {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-bottom: 10px;
+    .svg-icon {
+      margin-right: 16px;
+    }
+    .el-scrollbar {
+      height: 100%;
+    }
+    &.logo {
+      top: 60px;
+      .el-scrollbar {
+        height: calc(100% - 60px);
+      }
+    }
+    &.tigger {
+      padding-bottom: 46px;
+    }
+
+    .el-menu {
+      background-color: $eal-menu-bg;
+      border-right: 0 none;
+      .el-menu-item {
+        font-weight: 400;
+        position: relative;
+        &:hover {
+          color: $eal-menu-hover-text !important;
+          background-color: $eal-menu-bg !important;
+        }
+        &.is-active {
+          color: $eal-menu-active-text;
+          background-color: $eal-menu-active-bg !important;
+          &:hover {
+            background-color: $eal-menu-active-bg !important;
+          }
+        }
+      }
+    }
+
+    .el-submenu {
+      .el-menu-item {
+        background-color: $eal-menu-bg !important;
+        &:hover {
+          background-color: $eal-sub-menu-hover-bg !important;
+        }
+      }
+      & > .el-submenu__title {
+        &:hover {
+          color: $eal-menu-hover-text !important;
+          background-color: $eal-sub-menu-hover-bg !important;
+          i {
+            color: $eal-menu-hover-text;
+          }
+        }
+      }
+    }
+
+    &.collapse {
+      .title {
+        height: 320px;
+        padding: 20px;
+        line-height: 30px;
+      }
+      .el-submenu {
+        overflow: hidden;
+
+        & > .el-submenu__title {
+          padding: 0 !important;
+
+          .svg-icon {
+            margin-left: 20px;
+          }
+
+          .sub-el-icon {
+            margin-left: 19px;
+          }
+
+          .el-submenu__icon-arrow {
+            display: none;
+          }
+        }
+      }
+      .el-menu--collapse {
+        .el-submenu {
+          & > .el-submenu__title {
+            & > span {
+              height: 0;
+              width: 0;
+              overflow: hidden;
+              visibility: hidden;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .eal-scrollbar {
+    overflow-x: hidden !important;
+  }
+}
+
+.el-menu--vertical {
+  .nest-menu {
+    .el-menu-item {
+      background-color: $eal-menu-bg !important;
+      &.is-active {
+        background-color: $eal-menu-active-bg !important;
+      }
+    }
+  }
+}
