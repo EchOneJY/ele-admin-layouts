@@ -4,9 +4,9 @@
     :class="{ collapse: isCollapse }"
     :style="{ width: sidebarWidth + 'px', flex: `0 0 ${sidebarWidth}px` }"
   >
-    <div class="eal-logo" :class="{ collapse: isCollapse }" v-if="logoVisible && !$slots.logo" />
-    <slot name="logo" v-if="logoVisible"></slot>
-    <div class="sidebar-menu" :class="{ collapse: isCollapse, logo: logoVisible, tigger: collapse }">
+    <div class="eal-logo" :class="{ collapse: isCollapse }" v-if="visibleLogo && !$slots.logo" />
+    <slot name="logo" v-if="visibleLogo"></slot>
+    <div class="sidebar-menu" :class="{ collapse: isCollapse, logo: visibleLogo, tigger: visibleCollapse }">
       <el-scrollbar wrap-class="eal-scrollbar">
         <el-menu
           class="el-menu-vertical-demo"
@@ -24,7 +24,7 @@
         </el-menu>
       </el-scrollbar>
     </div>
-    <div class="collapse-bottom" v-if="collapse" @click="toggleCollapse">
+    <div class="collapse-bottom" v-if="visibleCollapse" @click="toggleCollapse">
       <i :class="isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left'"></i>
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
       },
     },
     // 是否有收缩按钮
-    collapse: {
+    visibleCollapse: {
       type: Boolean,
     },
     // 侧边栏收缩状态
@@ -53,7 +53,7 @@ export default {
       type: Boolean,
     },
     // 是否展示logo
-    logoVisible: {
+    visibleLogo: {
       type: Boolean,
     },
     // 侧边栏宽度

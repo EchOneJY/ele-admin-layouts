@@ -5,9 +5,9 @@
         class="icon-fold"
         :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
         @click="toggleCollapse"
-        v-if="collapse"
+        v-if="visibleCollapse"
       ></i>
-      <sl-breadcrumb class="eal-header-breadcrumb" :class="{ ml: collapse }" v-if="breadcrumb" />
+      <eal-breadcrumb class="eal-header-breadcrumb" :class="{ ml: visibleCollapse }" v-if="visibleBreadcrumb" />
       <slot name="left"></slot>
     </div>
     <div class="eal-header-right">
@@ -17,18 +17,18 @@
 </template>
 
 <script>
-import SlBreadcrumb from '../../breadcrumb'
+import EalBreadcrumb from '../../breadcrumb'
 export default {
   name: 'EalHeader',
   components: {
-    SlBreadcrumb,
+    EalBreadcrumb,
   },
   props: {
-    collapse: {
+    visibleCollapse: {
       type: Boolean,
       default: true,
     },
-    breadcrumb: {
+    visibleBreadcrumb: {
       type: Boolean,
       default: true,
     },

@@ -3,10 +3,10 @@
     <!-- Sidebar -->
     <eal-sidebar
       :data="routes"
-      :collapse="sidebarCollapse"
-      :logo-visible="logoVisible"
+      :visible-fold="visibleCollapseSideBar"
+      :visible-logo="visibleLogo"
       :sidebar-width="sidebarWidth"
-      :is-collapse.sync="isCollapse"
+      :is-fold.sync="isCollapse"
       v-if="!isContentFull"
     >
       <slot name="logo" slot="logo"></slot>
@@ -16,9 +16,9 @@
       <div class="eal-layout-right-header">
         <!-- Header -->
         <eal-header
-          :collapse="headerCollapse"
-          :is-collapse.sync="isCollapse"
-          :breadcrumb="breadcrumbVisible"
+          :visible-fold="visibleCollapseHeader"
+          :is-fold.sync="isCollapse"
+          :visible-breadcrumb="visibleBreadcrumb"
           v-if="!isContentFull"
         >
           <slot name="header-left" slot="left"></slot>
@@ -28,10 +28,10 @@
         <!-- Tabs -->
         <eal-tabs-view
           :tabs-data="routes"
-          :refresh="refresh"
-          :full="full"
+          :visible-refresh="visibleRefresh"
+          :visible-full="visibleFull"
           :is-content-full.sync="isContentFull"
-          v-if="tabsVisible"
+          v-if="visibleTabs"
         />
       </div>
 
@@ -53,7 +53,7 @@ export default {
   name: 'EalLayout',
   props: {
     //是否展示侧边栏logo
-    logoVisible: {
+    visibleLogo: {
       type: Boolean,
       default: true,
     },
@@ -70,32 +70,32 @@ export default {
       },
     },
     //是否展示侧边栏伸缩按钮
-    sidebarCollapse: {
+    visibleCollapseSideBar: {
       type: Boolean,
       default: false,
     },
     //是否展示Header伸缩按钮
-    headerCollapse: {
+    visibleCollapseHeader: {
       type: Boolean,
       default: true,
     },
     //是否展示Header面包屑
-    breadcrumbVisible: {
+    visibleBreadcrumb: {
       type: Boolean,
       default: true,
     },
     // 是否展示页签
-    tabsVisible: {
+    visibleTabs: {
       type: Boolean,
       default: true,
     },
     //是否展示刷新
-    refresh: {
+    visibleRefresh: {
       type: Boolean,
       default: true,
     },
     //是否展示内容全屏
-    full: {
+    visibleFull: {
       type: Boolean,
       default: true,
     },

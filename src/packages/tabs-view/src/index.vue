@@ -11,7 +11,7 @@
     </el-tabs>
     <ul class="tabs-extra">
       <el-tooltip class="item" effect="dark" content="刷新" placement="bottom" :open-delay="500">
-        <li class="refresh" @click="handleRefresh" v-if="refresh">
+        <li class="refresh" @click="handleRefresh" v-if="visibleRefresh">
           <i class="el-icon el-icon-refresh refresh"></i>
         </li>
       </el-tooltip>
@@ -34,7 +34,7 @@
           <el-dropdown-item icon="el-icon-minus" :disabled="onlnAffix" command="all">关闭全部标签页</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <li class="full-screen" @click="toggleFull" v-if="full">
+      <li class="full-screen" @click="toggleFull" v-if="visibleFull">
         <!-- <svg-icon :icon-class="full ? 'close-full' : 'full'"></svg-icon> -->
         <i class="el-icon el-icon-full-screen"></i>
       </li>
@@ -56,14 +56,14 @@ export default {
       },
     },
     //是否展示刷新
-    refresh: {
+    visibleRefresh: {
       type: Boolean,
     },
     //是否展示内容全屏
-    full: {
+    visibleFull: {
       type: Boolean,
     },
-    //内容是否全屏展示
+    //内容全屏展示状态
     isContentFull: {
       type: Boolean,
     },
