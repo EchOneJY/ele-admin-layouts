@@ -44,7 +44,7 @@ Modern browsers and Internet Explorer 10+.
 | routes | 路由数据(用作侧边栏及页签展示) | array | —— | —— |
 | visibleLogo | 是否展示侧边栏logo | boolen | —— | true |
 | sidebarWidth | 侧边栏宽度 | number | —— | 220 |
-| visibleCollapseSideBar | 是否展示侧边栏伸缩按钮 | boolen | —— | false |
+| visibleCollapseSidebar | 是否展示侧边栏伸缩按钮 | boolen | —— | false |
 | visibleCollapseHeader | 是否展示Header伸缩按钮 | boolen | —— | true |
 | visibleBreadcrumb | 是否展示Header面包屑 | boolen | —— | true |
 | visibleTabs | 是否展示页签 | boolen | —— | true |

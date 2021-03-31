@@ -3,10 +3,10 @@
     <!-- Sidebar -->
     <eal-sidebar
       :data="routes"
-      :visible-fold="visibleCollapseSideBar"
+      :visible-collapse="visibleCollapseSidebar"
       :visible-logo="visibleLogo"
       :sidebar-width="sidebarWidth"
-      :is-fold.sync="isCollapse"
+      :is-collapse.sync="isCollapse"
       v-if="!isContentFull"
     >
       <slot name="logo" slot="logo"></slot>
@@ -16,8 +16,8 @@
       <div class="eal-layout-right-header">
         <!-- Header -->
         <eal-header
-          :visible-fold="visibleCollapseHeader"
-          :is-fold.sync="isCollapse"
+          :visible-collapse="visibleCollapseHeader"
+          :is-collapse.sync="isCollapse"
           :visible-breadcrumb="visibleBreadcrumb"
           v-if="!isContentFull"
         >
@@ -70,7 +70,7 @@ export default {
       },
     },
     //是否展示侧边栏伸缩按钮
-    visibleCollapseSideBar: {
+    visibleCollapseSidebar: {
       type: Boolean,
       default: false,
     },

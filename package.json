@@ -1,6 +1,6 @@
 {
   "name": "ele-admin-layouts",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "this is echone's layouts",
   "main": "lib/index.umd.js",
   "private": false,
